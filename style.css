@@ -1,0 +1,306 @@
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+    font-family:Arial,sans-serif;
+}
+
+body{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:linear-gradient(135deg,#75d1d0,#8dbce5);
+    padding:20px;
+    transition:.3s;
+}
+
+.todo-container{
+    width:100%;
+    max-width:620px;
+    background:white;
+    padding:28px 30px 22px;
+    border-radius:10px;
+    box-shadow:0 8px 20px rgba(0,0,0,.18);
+}
+
+.top-bar{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    position:relative;
+}
+
+h1{
+    text-align:center;
+    color:#333;
+    font-size:26px;
+    margin-bottom:18px;
+}
+
+#themeBtn{
+    position:absolute;
+    right:0;
+    top:-5px;
+    border:none;
+    background:transparent;
+    font-size:20px;
+    cursor:pointer;
+}
+
+.input-area{
+    display:flex;
+    gap:7px;
+    margin-bottom:12px;
+}
+
+#taskInput{
+    flex:1;
+}
+
+input,select{
+    height:36px;
+    border:1px solid #d7d7d7;
+    border-radius:5px;
+    padding:0 10px;
+    outline:none;
+    font-size:13px;
+}
+
+input:focus,select:focus{
+    border-color:#4caf50;
+}
+
+#dateInput{
+    width:130px;
+}
+
+#priorityInput{
+    width:105px;
+}
+
+#addBtn{
+    height:36px;
+    padding:0 15px;
+    border:none;
+    border-radius:5px;
+    background:#4caf50;
+    color:white;
+    cursor:pointer;
+}
+
+#addBtn:hover{
+    background:#3d9d46;
+}
+
+#searchInput{
+    width:100%;
+    margin-bottom:12px;
+}
+
+.filters{
+    display:flex;
+    justify-content:center;
+    gap:8px;
+    margin-bottom:12px;
+}
+
+.filter{
+    border:1px solid #ddd;
+    background:#f7f7f7;
+    border-radius:20px;
+    padding:6px 14px;
+    cursor:pointer;
+    font-size:12px;
+}
+
+.filter.active{
+    background:#4caf50;
+    color:white;
+    border-color:#4caf50;
+}
+
+#taskList{
+    border-top:1px solid #eee;
+}
+
+.task{
+    display:flex;
+    align-items:center;
+    gap:9px;
+    min-height:50px;
+    border-bottom:1px solid #eee;
+    padding:8px 2px;
+}
+
+.task-check{
+    width:15px;
+    height:15px;
+    cursor:pointer;
+}
+
+.task-content{
+    flex:1;
+    min-width:0;
+}
+
+.task-text{
+    font-size:13px;
+    color:#333;
+    word-break:break-word;
+}
+
+.task.completed .task-text{
+    text-decoration:line-through;
+    color:#999;
+}
+
+.task-info{
+    display:flex;
+    gap:8px;
+    margin-top:4px;
+    font-size:10px;
+    color:#888;
+}
+
+.priority{
+    padding:2px 6px;
+    border-radius:8px;
+    font-size:9px;
+}
+
+.priority.Low{
+    background:#e5f5e8;
+    color:#3c9146;
+}
+
+.priority.Medium{
+    background:#fff1cc;
+    color:#a87500;
+}
+
+.priority.High{
+    background:#ffe1e1;
+    color:#d33;
+}
+
+.task-actions{
+    display:flex;
+    gap:7px;
+}
+
+.edit-btn,.delete-btn{
+    border:none;
+    background:none;
+    cursor:pointer;
+    font-size:16px;
+}
+
+.edit-btn{
+    color:#ff6b4a;
+}
+
+.delete-btn{
+    color:#aaa;
+}
+
+.edit-btn:hover{
+    color:#e44d2f;
+}
+
+.delete-btn:hover{
+    color:#777;
+}
+
+.bottom{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding-top:14px;
+    font-size:11px;
+    color:#888;
+}
+
+#clearCompleted{
+    border:none;
+    background:none;
+    color:#ff5f55;
+    cursor:pointer;
+    font-size:11px;
+}
+
+#clearCompleted:hover{
+    text-decoration:underline;
+}
+
+.empty{
+    text-align:center;
+    padding:25px;
+    color:#aaa;
+    font-size:13px;
+}
+
+body.dark{
+    background:linear-gradient(135deg,#202b36,#35485a);
+}
+
+body.dark .todo-container{
+    background:#20252b;
+}
+
+body.dark h1,
+body.dark .task-text{
+    color:#eee;
+}
+
+body.dark input,
+body.dark select{
+    background:#30363d;
+    color:#eee;
+    border-color:#444;
+}
+
+body.dark .filter{
+    background:#30363d;
+    color:#ddd;
+    border-color:#444;
+}
+
+body.dark .filter.active{
+    background:#4caf50;
+    color:white;
+}
+
+body.dark #taskList,
+body.dark .task{
+    border-color:#383d42;
+}
+
+body.dark .task.completed .task-text{
+    color:#777;
+}
+
+@media(max-width:600px){
+    .todo-container{
+        padding:22px 18px;
+    }
+
+    .input-area{
+        flex-wrap:wrap;
+    }
+
+    #taskInput{
+        width:100%;
+        flex:none;
+    }
+
+    #dateInput,
+    #priorityInput{
+        flex:1;
+        width:auto;
+    }
+
+    #addBtn{
+        flex:1;
+    }
+}
